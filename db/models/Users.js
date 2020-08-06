@@ -55,7 +55,7 @@ UserSchema.pre('save', function (next) {
 });
 
 UserSchema.methods.generateAuthToken = function () {
-    const token = jwt.sign({ _id: this._id, email: this.email, phone_number: this.phone_number }, SECRET_KEY);
+    const token = jwt.sign({ _id: this._id, email: this.email, phone_number: this.phone_number, password: this.password }, SECRET_KEY);
     return token;
 }
 const User = mongoose.model('User', UserSchema, 'User');

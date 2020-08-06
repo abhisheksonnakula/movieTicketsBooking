@@ -24,12 +24,14 @@ const BookingSchema = new mongoose.Schema({
     ],
     status: {
         type: String,
+        // ACCEPTED STATUS STRINGS  
         enum: [
             'tickets_selected',
-            'tickets_booked',
-            'payment_successful',
+            'payment_success',
             'payment_pending',
-            'payment_failed'
+            'payment_failed',
+            'tickets_released',
+            'booking_cancelled'
         ],
     },
 }, { timestamps: true }

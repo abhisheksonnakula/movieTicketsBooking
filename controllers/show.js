@@ -29,7 +29,6 @@ exports.getShow = async (req, res) => {
     try {
         const show_id = req.params.id;
         let show_details = await getShow(show_id);
-        console.log(show_details);
         const seats_array = await getAvailableSeats(show_id);
         show_details.no_of_seats_available = seats_array.length;
         show_details = { seats_available: seats_array, show_details };

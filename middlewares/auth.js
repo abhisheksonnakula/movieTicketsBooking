@@ -10,7 +10,6 @@ module.exports = async function (req, res, next) {
 
     try {
         const decoded = jwt.verify(token, SECRET_KEY);
-        console.log(decoded);
         const user = await getUserByemail(decoded.email);
         if (user && (user.password == decoded.password)) {
             req.user = decoded;

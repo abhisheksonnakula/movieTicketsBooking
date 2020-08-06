@@ -21,7 +21,7 @@ exports.bookSeat = async (_id) => {
 };
 
 exports.releaseSeat = async (_id) => {
-    let status = await Seat.findOneAndUpdate({ _id, status: true }, { status: false });
+    let status = await Seat.findOneAndUpdate({ _id, status: true }, { status: false }, { new: true });
     return status;
 }
 
