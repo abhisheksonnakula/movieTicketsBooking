@@ -96,6 +96,7 @@ exports.updateBooking = async (req, res) => {
             res.status(200).send(updated_booking_record);
         }
         // Payment Succes and now want to cancel Booking => release tickets and send for refund if applicable
+        
     } catch (error) {
         console.log("controller.booking.updateBooking:Exception", error);
         res.send(error);
