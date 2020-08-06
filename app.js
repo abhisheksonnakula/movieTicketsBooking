@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var theatreRouter = require('./routes/theatre');
 var showRouter = require('./routes/show');
+var bookingRouter = require('./routes/booking');
 
 //connect to mongodb
 mongoose
@@ -32,6 +33,7 @@ app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/theatre', theatreRouter);
 app.use('/show', showRouter);
+app.use('/booking', bookingRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

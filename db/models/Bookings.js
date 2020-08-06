@@ -9,14 +9,23 @@ const BookingSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Show',
     },
-    seats_booked: {
-        type: Array,
-        default: [],
-    },
+    seats_booked: [
+        {
+            seat_row: {
+                type: String
+            },
+            seat_number: {
+                type: Number
+            },
+            seat_id: {
+                type: String
+            }
+        }
+    ],
     status: {
         type: String,
         enum: [
-            'tickets_selcted',
+            'tickets_selected',
             'tickets_booked',
             'payment_successful',
             'payment_pending',
